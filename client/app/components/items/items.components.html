@@ -1,0 +1,25 @@
+<form (submit)="addItem($event)">
+    <div class="form-group">
+            <select [(ngModel)]="AisleNum" name="AisleNum" class="form-control" placeholder="AisleNum">
+                <option value="1">Aisle # 1</option>
+                <option value="2">Aisle # 2</option>
+                <option value="3">Aisle # 3</option>
+                <option value="4">Aisle # 4</option>
+                <option value="5">Aisle # 5</option>
+            </select>
+        <input type="text" [(ngModel)]="ItemName" name="ItemName" class="form-control" placeholder="Add Items">
+        <button type="submit" (click)="addItem($event)" class="btn btn-primary">Submit</button>
+    </div> 
+</form>
+
+<div class = "items-list">
+    <div *ngFor = "let item of items">
+        <div class="col-md-1">
+                {{item.AisleNum}} 
+                {{item.ItemName}}
+                {{item.Shop.ShopNow}}
+                {{item.Shop.isShopped}}
+        </div>
+        <input type="button" value="Delete" class="btn btn-danger">
+    </div>
+</div>

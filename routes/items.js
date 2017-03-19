@@ -30,7 +30,7 @@ router.get('/item/:id', function(req, res, next){
 //STORE ITEMS AS PER AISLE
 router.post('/item', function(req, res, next){
     var item = req.body;
-    if(!item.ItemName || (item.ShopNow + ''))
+    if(!item.ItemName || !(item.ShopNow + ''))
     {
         res.status(400);
         res.json({
