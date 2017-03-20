@@ -56,13 +56,13 @@ router.put('/item/:id', function(req, res, next){
     var item = req.body;
     var updItem = {};
 
-    if(item.Shop.isShopNow)
+    if(item.ShopNow)
     {
-        updItem.isShopNow = item.Shop.isShopNow;
+        updItem.ShopNow = item.ShopNow;
     }
-    if(item.Shop.isShopped)
+    if(item.isShopped)
     {
-        updItem.isShopped = item.Shop.isShopped;
+        updItem.isShopped = item.isShopped;
     }
     if(item.ItemName)
     {

@@ -11,7 +11,7 @@ export class ItemService{
 
     getItems()
     {
-        return this.http.get('http://localhost:4001/api/items')
+        return this.http.get('/api/items')
         .map(res => res.json());
     }
 
@@ -19,6 +19,24 @@ export class ItemService{
     {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:4001/api/item', JSON.stringify(newItem),{headers: headers}).map(res => res.json());
+        return this.http.post('/api/item', JSON.stringify(newItem),{headers: headers}).map(res => res.json());
+    }
+
+    deleteItem(id)
+    {
+        return this.http.delete('/api/item/'+id)
+        .map(res => res.json());
+    }
+
+    updateStatusSN(item){
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/item/' + item._id, JSON.stringify(item),{headers: headers}).map(res => res.json());
+    }
+
+    updateStatusShopped(item){
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/item/' + item._id, JSON.stringify(item),{headers: headers}).map(res => res.json());
     }
 }
