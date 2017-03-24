@@ -30,15 +30,15 @@ var ItemService = (function () {
         return this.http.delete('/api/item/' + id)
             .map(function (res) { return res.json(); });
     };
-    ItemService.prototype.updateStatusSN = function (item) {
+    ItemService.prototype.updateStatusSN = function (itemSN) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.put('/api/item/' + item._id, JSON.stringify(item), { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.put('/api/item/' + itemSN._id, JSON.stringify(itemSN), { headers: headers }).map(function (res) { return res.json(); });
     };
-    ItemService.prototype.updateStatusShopped = function (item) {
+    ItemService.prototype.updateStatusShopped = function (itemShopped) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.put('/api/item/' + item._id, JSON.stringify(item), { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.put('/api/item/' + itemShopped._id, JSON.stringify(itemShopped), { headers: headers }).map(function (res) { return res.json(); });
     };
     return ItemService;
 }());

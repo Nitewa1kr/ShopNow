@@ -14,20 +14,19 @@
 
 <div class = "items-list">
     <div *ngFor = "let item of items">
-        <div class="col-md-1">
-            <input type="checkbox" [checked]="item.isShopped" (click)="updateStatusShopped(item)">
-        </div>
-        <div class="col-md-1">
-            <input type="checkbox" [checked]="item.ShopNow" (click)="updateStatusSN(item)">
-        </div>
-        <div class="col-md-1">
-                {{item.AisleNum}} 
-                {{item.ItemName}}
-                {{item.ShopNow}}
-                {{item.isShopped}}
-        </div>
-        <div class="col-md-1">
-            <input type="button" (click)="deleteItem(item._id)" value="Delete" class="btn btn-danger">
+        <div class="container">
+            <div class="col-md-4">
+                    {{item.AisleNum}} 
+                    {{item.ItemName}}
+                    {{item.ShopNow}}
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-plus" (click)="updateStatusSN(item)" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-4">
+                <input type="button" (click)="deleteItem(item._id)" value="Delete" class="btn btn-danger">
+            </div>
         </div>
     </div>
 </div>
+

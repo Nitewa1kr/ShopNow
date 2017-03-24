@@ -11,6 +11,8 @@ export class ItemComponent {
     items: Item[];
     AisleNum: number;
     ItemName: string;
+    ShopNow: boolean;
+    isShopped: boolean;
 
     constructor(private ItemService:ItemService){
         this.ItemService.getItems().subscribe(items => {this.items = items});
@@ -52,6 +54,7 @@ export class ItemComponent {
             AisleNum: item.AisleNum,
             ItemName: item.ItemName,
             ShopNow : !item.ShopNow,
+            
         };
 
         this.ItemService.updateStatusSN(_item).subscribe(data => {

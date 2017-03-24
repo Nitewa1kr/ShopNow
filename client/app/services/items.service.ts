@@ -28,15 +28,15 @@ export class ItemService{
         .map(res => res.json());
     }
 
-    updateStatusSN(item){
+    updateStatusSN(itemSN){
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.put('/api/item/' + item._id, JSON.stringify(item),{headers: headers}).map(res => res.json());
+        return this.http.put('/api/item/' + itemSN._id, JSON.stringify(itemSN),{headers: headers}).map(res => res.json());
     }
 
-    updateStatusShopped(item){
+    updateStatusShopped(itemShopped){
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.put('/api/item/' + item._id, JSON.stringify(item),{headers: headers}).map(res => res.json());
+        return this.http.put('/api/item/' + itemShopped._id, JSON.stringify(itemShopped),{headers: headers}).map(res => res.json());
     }
 }
